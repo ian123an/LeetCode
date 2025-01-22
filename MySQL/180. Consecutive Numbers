@@ -1,7 +1,7 @@
 # Write your MySQL query statement below
 SELECT DISTINCT num AS ConsecutiveNums
 FROM (
-    SELECT id, num, LAG(num) OVER(ORDER BY id) AS old_num, LEAD(num) OVER(ORDER BY id) AS new_num
+    SELECT id, num, LEAD(num, 1) OVER() AS num1, LEAD(num,2) OVER() AS num2
     FROM Logs
-) AS consecutively
-WHERE num = old_num AND old_num = new_num;
+) AS c
+WHERE c.num = num1 AND num1 = num2;
