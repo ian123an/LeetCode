@@ -4,4 +4,5 @@ FROM (
     SELECT id, num, LEAD(num, 1) OVER() AS num1, LEAD(num,2) OVER() AS num2
     FROM Logs
 ) AS c
-WHERE c.num = num1 AND num1 = num2;
+WHERE c.num = num1 
+AND num1 = num2;
