@@ -7,7 +7,6 @@ public:
         }
 
         int reverse = 0;
-
         while(x > reverse)
         {
             reverse = reverse * 10 + x % 10;
