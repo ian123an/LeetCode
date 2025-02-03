@@ -1,0 +1,9 @@
+# Write your MySQL query statement below
+SELECT Users.name, SUM(
+    CASE WHEN Users.id = Rides.user_id THEN Rides.distance ELSE 0 END
+) AS travelled_distance
+FROM Users
+LEFT JOIN Rides
+ON Users.id = Rides.user_id
+GROUP BY user_id
+ORDER BY travelled_distance DESC, name ASC;
