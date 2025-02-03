@@ -1,0 +1,6 @@
+# Write your MySQL query statement below
+SELECT *
+FROM Users
+WHERE email LIKE '%@%.com'
+AND email NOT LIKE '%[^@0-9A-Za-z_]%@%[^@0-9A-Za-z]%'
+ORDER BY user_id ASC;
